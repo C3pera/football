@@ -1,12 +1,7 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
-//не пойму, какие бы данные не вводил, выводит 0 побед и 0 ничьих ¯\_(ツ)_/¯
-
 int main()
-
-
-
 {
     setlocale(LC_ALL, "Russian");
 
@@ -16,7 +11,12 @@ int main()
     int summ;
     for (int i = 0; i < 20; i++)
     {
-        cin >> result[i];
+        result[i] = rand() % 4; //Рандом, который выдает числа от 0 до 3
+        if (result[i] == 2) // если число == 2, то прибавляется +1, т.к. в задаче ничего не написано про случай с двойкой
+        {
+            result[i] += 1;
+        }
+        cout << result[i] << "|";
     }
     for (int i = 0; i < 20; i++)
     {
@@ -32,7 +32,4 @@ int main()
     cout << "Количесвто ничьих: " << draw << endl;
 
     cout << summ;
-    int n;
-    cin >> n;
-
 }
